@@ -1,0 +1,10 @@
+---
+- name: Pihole update
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Pihole update
+      command: pihole -up
+      register: result
+      changed_when: >
+        not "'Everything is up to date!' in result.stdout | default('')"

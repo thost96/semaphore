@@ -1,0 +1,11 @@
+---
+- name: APT Dist Upgrade
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: APT Dist Upgrade
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+        upgrade: dist

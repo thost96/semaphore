@@ -1,0 +1,10 @@
+---
+- name: APT Autoremove
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: APT Autoremove
+      ansible.builtin.apt:
+        autoremove: yes
+        autoclean: yes
